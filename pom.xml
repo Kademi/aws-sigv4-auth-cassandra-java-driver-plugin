@@ -111,37 +111,13 @@
                     </execution>
                 </executions>
             </plugin>            
-            <plugin>
-                <groupId>org.sonatype.plugins</groupId>
-                <artifactId>nexus-staging-maven-plugin</artifactId>
-                <version>1.6.8</version>
-                <extensions>true</extensions>
-                <configuration>
-                    <serverId>sonatype-nexus-staging</serverId>
-                    <nexusUrl>https://aws.oss.sonatype.org</nexusUrl>
-                    <autoReleaseAfterClose>false</autoReleaseAfterClose>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>license-maven-plugin</artifactId>
-                <version>2.0.0</version>
-                <configuration>
-                    <copyrightOwners>Amazon.com, Inc. or its affiliates. All Rights Reserved.</copyrightOwners>
-                    <licenseName>apache_v2</licenseName>
-                    <roots>src</roots>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>first</id>
-                        <goals>
-                            <goal>update-file-header</goal>
-                        </goals>
-                        <phase>process-sources</phase>
-                    </execution>
-                </executions>
-            </plugin>
         </plugins>
     </build>
-
+    <distributionManagement>
+        <repository>
+            <id>bintray-kademi-Kademi</id>
+            <name>bintray-kademi-Kademi</name>
+            <url>https://api.bintray.com/maven/kademi/Kademi/kademi/;publish=1</url>
+        </repository>
+    </distributionManagement>
 </project>
